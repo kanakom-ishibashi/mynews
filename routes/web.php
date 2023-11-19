@@ -21,3 +21,6 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
     Route::get('news/create', 'add')->name('news.add');
     Route::post('news/create', 'create')->name('news.create');
 });
+
+Route::get('admin/profile/create', 'ProfileController@add');
+Route::get('admin/profile/edit', 'ProfileController@edit');
