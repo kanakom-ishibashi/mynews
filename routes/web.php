@@ -24,3 +24,6 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
 
 Route::get('admin/profile/create', 'ProfileController@add');
 Route::get('admin/profile/edit', 'ProfileController@edit');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
