@@ -27,3 +27,13 @@ Route::get('admin/profile/edit', 'ProfileController@edit');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::get('news/create', 'add')->name('news.add');
+    Route::post('news/create', 'create')->name('news.create');
+});
+
+
+use App\Http\Controllers\ProfileController;
+
+Route::post('admin/profile/create', [ProfileController::class, 'create'])->name('admin.profile.create');

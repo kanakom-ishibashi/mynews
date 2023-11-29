@@ -50,6 +50,26 @@
                     </div>
                 </div>
             </nav>
+            
+            <nav>
+        <ul>
+            <li><a href="/">ホーム</a></li>
+            <!-- ログインしている場合 -->
+            @auth
+                <li><a href="{{ route('profile.edit') }}">プロフィール編集</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">ログアウト</button>
+                    </form>
+                </li>
+            @else
+            <!-- ログインしていない場合 -->
+                <li><a href="{{ route('login') }}">ログイン</a></li>
+                <li><a href="{{ route('register') }}">新規登録</a></li>
+            @endauth
+        </ul>
+    </nav>
             {{-- ここまでナビゲーションバー --}}
 
             <main class="py-4">

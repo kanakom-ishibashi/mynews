@@ -14,8 +14,12 @@ class NewsController extends Controller
         return view('admin.news.create');
     }
 
+// 以下を追記
     public function create(Request $request)
     {
+       // admin/news/createにリダイレクトする
+        return redirect('admin/news/create');
+       
         // Validationを行う
         $this->validate($request, News::$rules);
 
@@ -54,5 +58,6 @@ class NewsController extends Controller
             $posts = News::all();
         }
         return view('admin.news.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+        
     }
 }

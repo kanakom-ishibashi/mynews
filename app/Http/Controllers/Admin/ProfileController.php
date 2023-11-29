@@ -11,8 +11,14 @@ class ProfileController extends Controller
     {
         return view('admin.profile.create');
     }
+    
+    public function create(Request $request)
+    {
+        // $request->name, $request->gender などを使ってデータを取得できます
+        // 受け取ったデータを処理するコードを記述する
+    }
 
-    public function create()
+    public function store(Request $request)
     {
         // プロフィールを作成するためのロジック
     }
