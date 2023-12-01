@@ -16,7 +16,3 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/admin.scss', 'public/css')
     .sourceMaps();
     
-    
-    mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css') // 既存のSassファイルのコンパイル
-    .sass('resources/sass/profile.scss', 'public/css'); // 新しいprofile.scssのコンパイル
