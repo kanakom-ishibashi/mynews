@@ -27,4 +27,9 @@ class ProfileController extends Controller
     {
         return view('admin.profile.edit');
     }
+    
+    public function update(Request $request)
+    {
+        // フォームの送信されたデータを取得して処理するロジックを記述する
+    }
 }
