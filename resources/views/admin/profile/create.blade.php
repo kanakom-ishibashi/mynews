@@ -7,7 +7,15 @@
 
     <form method="POST" action="{{ route('admin.profile.create') }}">
         @csrf
-
+        
+        @if (count($errors) > 0)
+            <ul>
+                @foreach($errors->all() as $e)
+                    <li>{{ $e }}</li>
+                @endforeach
+            </ul>
+        @endif
+        
         <div>
             <label for="name">氏名:</label>
             <input type="text" id="name" name="name">

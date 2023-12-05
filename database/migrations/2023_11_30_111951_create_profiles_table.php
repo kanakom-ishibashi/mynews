@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('gender');  // 性別を保存するカラム
             $table->string('hobby');  // 趣味を保存するカラム
             $table->string('introduction');  // 趣味を保存するカラム
-
+            $table->timestamps();
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news');
+        Schema::dropIfExists('profiles');
     }
 };
