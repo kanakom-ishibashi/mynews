@@ -68,3 +68,6 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
 Route::prefix('admin')->group(function () {
     Route::post('/profile/update', 'Admin\ProfileController@update')->name('admin.profile.update');
 });
+
+use App\Http\Controllers\NewsController as PublicNewsController;
+Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
