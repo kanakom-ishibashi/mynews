@@ -71,3 +71,7 @@ Route::prefix('admin')->group(function () {
 
 use App\Http\Controllers\NewsController as PublicNewsController;
 Route::get('/', [PublicNewsController::class, 'index'])->name('news.index');
+
+
+
+Route::get('/profile', 'ProfileController@index');
